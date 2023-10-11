@@ -2,4 +2,5 @@
 node_modules
 
 # files
-.env
+.env*
+*.sh
