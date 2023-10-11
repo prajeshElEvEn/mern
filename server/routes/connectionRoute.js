@@ -1,8 +1,8 @@
 const express = require("express");
-const { liveMessage } = require("../controllers/connectionController");
+const { onConnect } = require("../controllers/connectionController");
 
 const router = express.Router();
 
-router.route("/").get(liveMessage);
+router.route("/").get(onConnect);
 
 module.exports = router;

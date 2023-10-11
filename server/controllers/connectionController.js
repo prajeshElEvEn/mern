@@ -1,6 +1,6 @@
 const asyncHandler = require("express-async-handler");
 
-const liveMessage = asyncHandler(async (req, res) => {
+const onConnect = asyncHandler(async (req, res) => {
   try {
     res.status(200).json({ message: "Connected to server" });
   } catch (error) {
@@ -9,5 +9,5 @@ const liveMessage = asyncHandler(async (req, res) => {
 });
 
 module.exports = {
-  liveMessage,
+  onConnect,
 };

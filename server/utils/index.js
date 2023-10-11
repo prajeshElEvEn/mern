@@ -5,5 +5,5 @@ utils.log = log;
 utils.success = success;
 utils.warn = warn;
 utils.error = error;
-utils.environment = require("./env");
+utils.env = require("./env");
 utils.db = require("./db");
