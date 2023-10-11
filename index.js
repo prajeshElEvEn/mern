@@ -2,6 +2,7 @@ const { environment, log, success, db } = require("./server/utils");
 const express = require("express");
 const cors = require("cors");
 const constants = require("./constants");
+const { connection } = require("./server/routes");
 
 environment();
 
@@ -13,6 +14,8 @@ app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use("/uploads", express.static(constants.paths.uploadDir));
+
+app.use("/api/live", connection);
 
 app.listen(port, hostname, async () => {
   await db();
