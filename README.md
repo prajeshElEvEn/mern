@@ -1,3 +1,3 @@
 # MERN
 
-> server side
+> template

@@ -1,8 +1,7 @@
-const { env, log, success, db } = require("./server/utils");
 const express = require("express");
 const cors = require("cors");
-const constants = require("./constants");
-const { connection } = require("./server/routes");
+const constants = require("../constants");
+const { connection } = require("./routes");
 
 env();
 
