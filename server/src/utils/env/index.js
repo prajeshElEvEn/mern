@@ -1,11 +1,20 @@
 const dotenv = require("dotenv");
+const { error } = require("logggger");
 
 const loadEnv = () => {
-  if (process.env.NODE_ENV === "production") {
+  dotenv.config({ path: ".env" });
+  const env = process.env.NODE_ENV;
+
+  if (env === "production") {
     dotenv.config({ path: ".env.production" });
+  } else if (env === "development") {
+    dotenv.config({ path: ".env.test" });
   } else {
-    dotenv.config({ path: ".env.development" });
+    error("Invalid environment");
+    throw new Error(`Invalid environment: ${env}`);
   }
+
+  return env;
 };
 
 module.exports = loadEnv;

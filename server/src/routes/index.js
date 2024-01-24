@@ -1,3 +1,5 @@
 const routes = module.exports;
 
-routes.connection = require("./connectionRoute");
+routes.health = require("./healthRoute");
+routes.auth = require("./authRoutes");
+routes.user = require("./userRoutes");

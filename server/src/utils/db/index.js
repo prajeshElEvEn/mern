@@ -1,10 +1,9 @@
 const mongoose = require("mongoose");
-const { success, error } = require("..");
+const { success, error } = require("logggger");
 
 const connectToDB = async (mongoURI) => {
   try {
-    const uri = process.env.MONGO_URI;
-    const conn = await mongoose.connect(uri, {
+    const conn = await mongoose.connect(mongoURI, {
       useNewUrlParser: true,
       useUnifiedTopology: true,
     });
