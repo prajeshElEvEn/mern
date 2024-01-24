@@ -13,9 +13,16 @@ const asyncHandler = require("express-async-handler");
 
 const onConnect = asyncHandler(async (req, res) => {
   try {
-    res.status(200).json({ message: "Connected to server" });
+    res.status(200).json({
+      status: "online",
+      message: "Connected to server",
+    });
   } catch (error) {
-    res.status(500).json({ message: "Error connecting to server", error });
+    res.status(500).json({
+      status: "offline",
+      message: "Error connecting to server",
+      error,
+    });
   }
 });
 

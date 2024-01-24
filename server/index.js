@@ -9,7 +9,6 @@ const { warn, log } = require("logggger");
 
 const runServer = async () => {
   const currentEnv = await loadEnv();
-  log(currentEnv);
   const port = process.env.PORT || 5000;
   const hostname = process.env.HOSTNAME || "127.0.0.1";
   const app = express();
@@ -26,9 +25,9 @@ const runServer = async () => {
   app.use(errorHandler);
 
   app.listen(port, hostname, async () => {
-    warn(`Current environment: ${currentEnv}`);
+    warn(`Environment > ${currentEnv}`);
     await connectToDB(process.env.MONGO_URI);
-    log(`Server running at http://${hostname}:${port}`);
+    log(`Server running > http://${hostname}:${port}/api/v1/health`);
   });
 };
 

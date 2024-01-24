@@ -7,9 +7,9 @@ const connectToDB = async (mongoURI) => {
       useNewUrlParser: true,
       useUnifiedTopology: true,
     });
-    success(`Connected to Databse: ${conn.connection.host}`);
+    success(`Connected to Databse > ${conn.connection.host}`);
   } catch (err) {
-    error(`Error connecting to Database: ${err.message}`);
+    error(`Error connecting to Database > ${err.message}`);
     process.exit(1);
   }
 };
