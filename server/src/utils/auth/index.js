@@ -1,7 +1,7 @@
 const jwt = require("jsonwebtoken");
 const crypto = require("crypto");
 const nodemailer = require("nodemailer");
-const loadEnv = require("../env");
+// const loadEnv = require("../env");
 // loadEnv();
 
 const {

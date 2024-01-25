@@ -24,14 +24,14 @@ const registerUser = asyncHandler(async (req, res) => {
 
   if (!firstName || !lastName || !email || !password) {
     res.status(400);
-    throw new Error("fill in all the fields");
+    throw new Error("Fill in all the fields");
   }
 
   const userExists = await User.findOne({ email });
 
   if (userExists) {
     res.status(400);
-    throw new Error("user already exists");
+    throw new Error("User already exists");
   }
 
   const salt = await bcrypt.genSalt(10);

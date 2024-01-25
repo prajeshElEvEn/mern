@@ -15,12 +15,12 @@ const onConnect = asyncHandler(async (req, res) => {
   try {
     res.status(200).json({
       status: "online",
-      message: "Connected to server",
+      message: "Server is up and running.",
     });
   } catch (error) {
     res.status(500).json({
       status: "offline",
-      message: "Error connecting to server",
+      message: "Server is not running.",
       error,
     });
   }
